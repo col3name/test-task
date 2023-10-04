@@ -3,10 +3,11 @@ import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {categoriesAdded, categoriesRemoved, categoriesUpdated} from "./slice";
 import {tasksClearedCategories} from "../tasks/slice";
 import {selectAllCategories} from "./selector";
+import {CategoryId} from "./model";
 
 export const useRemoveCategory = () => {
   const dispatch = useAppDispatch();
-  const removeCategory = (categoryId: string) => {
+  const removeCategory = (categoryId: CategoryId) => {
     dispatch(categoriesRemoved(categoryId));
     dispatch(tasksClearedCategories(categoryId));
   }
@@ -21,7 +22,7 @@ export const useCreateCategory = () => {
 }
 export const useEditCategory = () => {
   const dispatch = useAppDispatch();
-  const editCategory = (id: string, name: string, description: string) => {
+  const editCategory = (id: CategoryId, name: string, description: string) => {
     dispatch(categoriesUpdated({id, name, description}));
   }
   return { editCategory };

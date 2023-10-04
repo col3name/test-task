@@ -1,12 +1,7 @@
 /* VENDOR */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
-
-export interface CategoryState {
-  id: string;
-  name: string;
-  description: string;
-}
+import {CategoryState} from "./model";
 
 const initialState: CategoryState[] = [
   {

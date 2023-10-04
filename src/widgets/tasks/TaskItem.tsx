@@ -5,11 +5,11 @@ import React, {useState} from "react";
 import editIcon from "../../shared/icons/edit.svg";
 import removeIcon from "../../shared/icons/remove.svg";
 import Button from "../../shared/ui/button/Button";
-import {TaskState} from "../../features/tasks/slice";
 import {ModalEditTask} from "./ModelEditTask";
 
 import TaskCard from "../../features/tasks/ui/taskCard";
 import { ModalRemoveTask } from "./ModalRemoveTask";
+import {TaskState} from "../../features/tasks/model";
 
 interface TaskActionsProps {
   onEdit: () => void,
@@ -36,8 +36,8 @@ interface TaskListItemProps {
   item: TaskState;
 }
 export const TaskListItem: React.FC<TaskListItemProps> = ({item}) => {
-  const [editModalActive, setEditModalActive] = useState(false)
-  const [removeModalActive, setRemoveModalActive] = useState(false);
+  const [editModalActive, setEditModalActive] = useState<boolean>(false)
+  const [removeModalActive, setRemoveModalActive] = useState<boolean>(false);
 
   const onEdit = () => {
     setEditModalActive(true);

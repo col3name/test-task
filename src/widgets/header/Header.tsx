@@ -20,7 +20,7 @@ export const Header = () => {
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
 
-  const [createModalActive, setCreateModalActive] = useState(false);
+  const [createModalActive, setCreateModalActive] = useState<boolean>(false);
   const headerItems: HeaderItemType[] = [
     { isActive: !isCategories, link: "tasks", text: 'Задачи' },
     { isActive: isCategories, link: "categories", text: 'Категории' },

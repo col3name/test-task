@@ -4,9 +4,11 @@ import React, { useState } from "react";
 /* APPLICATION */
 import down from "../../icons/down.svg";
 import {useAllCategoriesSelector} from "../../../features/categories/hooks";
+import {TaskId} from "../../../features/tasks/model";
+import {CategoryId} from "../../../features/categories/model";
 
-type OptionId = string | undefined;
-type SetSelectedType = React.Dispatch<React.SetStateAction<string>>;
+type OptionId = CategoryId | TaskId | undefined;
+type SetSelectedType = React.Dispatch<React.SetStateAction<CategoryId>>;
 
 interface ModalDropdownProps {
   selected: OptionId;
@@ -84,7 +86,7 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
   selected,
   setSelected,
 }) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
   const options = useAllCategoriesSelector();
   const onClose = () => setIsActive(false);
 

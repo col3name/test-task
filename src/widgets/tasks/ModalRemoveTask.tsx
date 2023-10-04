@@ -7,7 +7,7 @@ import {Modal} from "../../shared/ui/modal/Modal";
 import {ModalHeader} from "../../shared/ui/modal/ModalHeader";
 import {ModalText} from "../../shared/ui/modal/ModalText";
 import {ModalFooter} from "../../shared/ui/modal/ModalFooter";
-import {TaskState} from "../../features/tasks/slice";
+import {TaskState} from "../../features/tasks/model";
 
 interface ModalRemoveItemProps {
   item: TaskState;

@@ -2,12 +2,12 @@
 import React from "react";
 
 /* APPLICATION */
-import { CategoryState} from "../../features/categories/slice";
 import {Modal} from "../../shared/ui/modal/Modal";
 import {ModalHeader} from "../../shared/ui/modal/ModalHeader";
 import {ModalText} from "../../shared/ui/modal/ModalText";
 import {ModalFooter} from "../../shared/ui/modal/ModalFooter";
 import {useRemoveCategory} from "../../features/categories/hooks";
+import {CategoryState} from "../../features/categories/model";
 
 interface ModalRemoveItemProps {
   item: CategoryState;

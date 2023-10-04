@@ -227,4 +227,14 @@ const btnClass = `modalbtn ${type === ModalBtnType.Primary && "primary" } ${size
 - заменить useDispatch на useAppDispatch, и useSelector на useAppSelector для подсказки типов либо удалить неиспользуемые useDispatch, useAppDispatch
 - удалить неспользуемые параметры i, arr```  let rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>```  
 
+- add TaskId and CategoryId type 
 
+```ts
+export type TaskId = string;
+export interface TaskState {
+  id: TaskId;
+  name: string;
+  description: string;
+  category: CategoryId;
+}
+```

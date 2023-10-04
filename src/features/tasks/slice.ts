@@ -1,13 +1,7 @@
 /* VENDOR */
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
-
-export interface TaskState {
-  id: string;
-  name: string;
-  description: string;
-  category: string;
-}
+import {TaskState} from "./model";
 
 const initialState: TaskState[] = [
   {

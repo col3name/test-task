@@ -1,4 +1,5 @@
-import {TaskState} from "../slice";
+import {TaskState} from "../model";
+import {CategoryId} from "../../categories/model";
 
 export interface TaskDescriptionProps {
   text: string
@@ -12,5 +13,5 @@ export interface TaskTitleProps {
 }
 
 export interface TaskCategoryProps {
-  category: string,
+  category: CategoryId,
 }

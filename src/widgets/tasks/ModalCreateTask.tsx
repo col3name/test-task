@@ -10,6 +10,7 @@ import {ModalFooter} from "../../shared/ui/modal/ModalFooter";
 
 import {useAddTask} from "../../features/tasks/hooks";
 import {ModalBtnSize} from "../../shared/ui/modal/modal.props";
+import {CategoryId} from "../../features/categories/model";
 
 
 interface ModalCreateTaskProps {
@@ -22,9 +23,9 @@ export const ModalCreateTask: React.FC<ModalCreateTaskProps> = ({
   setActive,
 }) => {
   const { addTask } = useAddTask()
-  const [name, setName] = useState("");
-  const [selected, setSelected] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState<string>("");
+  const [selected, setSelected] = useState<CategoryId>("");
+  const [description, setDescription] = useState<string>("");
 
   const clearState = () => {
     setName("");

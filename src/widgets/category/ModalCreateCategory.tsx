@@ -20,8 +20,8 @@ export const ModalCreateCategory: React.FC<ModalCreateCategoryProps> = ({
   setActive,
 }) => {
   const { createCategory } = useCreateCategory();
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
   const clearState = () => {
     setName("");

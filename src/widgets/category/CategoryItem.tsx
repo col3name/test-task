@@ -2,21 +2,21 @@
 import React, {useState} from "react";
 
 /* APPLICATION */
-
 import {ModalEditCategory} from "./ModelEditCategory";
 import {ModalRemoveCategory} from "./ModalRemoveCategory";
 import CategoryCard from "../../features/categories/ui/categoryCard";
 import CategoryActions from "../../features/categories/ui/categoryActions";
 
-import {CategoryState} from "../../features/categories/slice";
+import {CategoryState} from "../../features/categories/model";
+
 
 interface CategoryListItemProps {
   item: CategoryState
 }
 
 export const CategoryListItem: React.FC<CategoryListItemProps> = ({item}) => {
-  const [editModalActive, setEditModalActive] = useState(false)
-  const [removeModalActive, setRemoveModalActive] = useState(false);
+  const [editModalActive, setEditModalActive] = useState<boolean>(false)
+  const [removeModalActive, setRemoveModalActive] = useState<boolean>(false);
 
   const onEdit = () => {
     setEditModalActive(true);

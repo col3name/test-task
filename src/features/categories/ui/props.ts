@@ -1,4 +1,4 @@
-import {CategoryState} from "../slice";
+import {CategoryState} from "../model";
 
 export interface CategoryCardProps {
   item: CategoryState
