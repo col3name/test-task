@@ -3,18 +3,18 @@ import { Route, Routes } from "react-router-dom";
 
 /* APPLICATION */
 import "./App.css";
-import { Header } from "./Header/Header";
-import { Tasks } from "./Lists/Tasks";
-import { Categories } from "./Lists/Categories";
+import { Header } from "./widgets/header/Header";
+import { TasksPage } from "./pages/TasksPage";
+import { CategoriesPage } from "./pages/CategoriesPage";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route index element={<Tasks />} />
+        <Route path="/tasks" element={<TasksPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route index element={<TasksPage />} />
       </Routes>
     </div>
   );
