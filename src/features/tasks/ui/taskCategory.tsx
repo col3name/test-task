@@ -1,13 +1,13 @@
 import React from "react";
-import {useSelector} from "react-redux";
 
-import {findCategoryById, selectAllCategories} from "../../categories/slice";
 import {TaskCategoryProps} from "./props";
+import {findCategoryById} from "../selector";
+import {useAllCategoriesSelector} from "../../categories/hooks";
 
 const TaskCategory: React.FC<TaskCategoryProps> = ({
   category
 }) => {
-  const categories = useSelector(selectAllCategories)
+  const categories = useAllCategoriesSelector()
   const name = findCategoryById(categories, category);
   return <span className="list-item-col1-row1__category">{ name }</span>;
 }

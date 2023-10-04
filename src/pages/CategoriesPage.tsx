@@ -1,13 +1,8 @@
-/* VENDOR */
-import { useSelector } from "react-redux";
-
-/* APPLICATION */
 import { CategoryListItem } from "../widgets/category/CategoryItem";
-
-import { selectAllCategories } from "../features/categories/slice";
+import {useAllCategoriesSelector} from "../features/categories/hooks";
 
 export const CategoriesPage = () => {
-  const categories = useSelector(selectAllCategories);
+  const categories = useAllCategoriesSelector();
 
   return (
     <ul>

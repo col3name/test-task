@@ -2,9 +2,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-/* APPLICATION */
-import { RootState } from "../../app/store";
-
 export interface TaskState {
   id: string;
   name: string;
@@ -73,7 +70,5 @@ export const {
   tasksRemoved,
   tasksClearedCategories,
 } = tasksSlice.actions;
-
-export const selectAllTasks = (state: RootState) => state.tasks;
 
 export default tasksSlice.reducer;

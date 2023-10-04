@@ -1,13 +1,12 @@
 /* VENDOR */
 import React from "react";
-import { useSelector } from "react-redux";
 
 /* APPLICATION */
 import {TaskListItem} from "../widgets/tasks/TaskItem";
-import { selectAllTasks } from "../features/tasks/slice";
+import {useAllTaskSelector} from "../features/tasks/hooks";
 
 export const TasksPage: React.FC = () => {
-  const tasks = useSelector(selectAllTasks);
+  const tasks = useAllTaskSelector();
 
   return (
     <ul>
