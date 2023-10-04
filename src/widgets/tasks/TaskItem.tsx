@@ -43,7 +43,7 @@ export const TaskListItem: React.FC<TaskListItemProps> = ({item}) => {
     setEditModalActive(true);
   };
   const onRemove = () => {
-    setRemoveModalActive(false);
+    setRemoveModalActive(true);
   }
 
   return (

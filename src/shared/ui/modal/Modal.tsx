@@ -3,6 +3,7 @@ import React from "react";
 
 /* APPLICATION */
 import "./Modal.css";
+import Portal from "../portal/portal";
 
 interface ModalProps {
   active: boolean;
@@ -18,16 +19,18 @@ export const Modal: React.FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <div
-      className={active ? "modal active" : "modal"}
-      onClick={() => {
-        clearState && clearState();
-        setActive(false);
-      }}
-    >
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-        {children}
+    <Portal>
+      <div
+        className={active ? "modal active" : "modal"}
+        onClick={() => {
+          clearState && clearState();
+          setActive(false);
+        }}
+      >
+        <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+          {children}
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 };
